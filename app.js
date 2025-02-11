@@ -41,16 +41,16 @@ app.post('/add-task', (req, res) => {
         title: req.body.title,
         description: req.body.description,
         priority: req.body.priority,
-        dueDate: req.body.dueDate,
+        dueDate: req.body.due,
         status: 'pending',
         timestamp: new Date()
     };
 
-    if (task.title.trim() === "") {
+    if (!task.title.trim() === "") {
         res.send("Invalid Title!")
     }
 
-    if (task.description.trim() === "") {
+    if (!task.description.trim() === "") {
         res.send("Invalid Description!")
     }
 
