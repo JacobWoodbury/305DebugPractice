@@ -35,6 +35,7 @@ app.get('/dashboard', (req, res) => {
 
 // Handle new task submission
 app.post('/add-task', (req, res) => {
+
     // Get form data from request body
     const task = {
         title: req.body.title,
@@ -44,6 +45,18 @@ app.post('/add-task', (req, res) => {
         status: 'pending',
         timestamp: new Date()
     };
+
+    if (task.title.trim() === "") {
+        res.send("Invalid Title!")
+    }
+
+    if (task.description.trim() === "") {
+        res.send("Invalid Description!")
+    }
+
+    if (!["low", "medium", "high"].includes(task.priority)) {
+        res.send("Invalid Priority!")
+    }
     
     // Save task to our array
     tasks.push(task);
