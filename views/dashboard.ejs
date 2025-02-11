@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="main-nav">
+            <h1>Task Dashboard</h1>
+            <a href="/" class="nav-link">Add New Task</a>
+        </nav>
+
+        <section class="task-list">
+            <h2>All Tasks</h2>
+            <% if (tasks.length === 0) { %>
+                <p>No tasks yet. <a href="/">Add your first task!</a></p>
+            <% } else { %>
+                <div class="tasks">
+                    <% tasks.forEach(task => { %>
+                        <div class="task-card">
+                            <h3><%= task.title %></h3>
+                            <p><%= task.description %></p>
+                            <div class="task-meta">
+                                <span class="priority <%= task.priority %>">
+                                    Priority: <%= task.priority %>
+                                </span>
+                                <span class="due-date">
+                                    Due: <%= task.dueDate %>
+                                </span>
+                            </div>
+                            <div class="task-timestamp">
+                                Added: <%= task.timestamp.toLocaleString() %>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            <% } %>
+        </section>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Add New Task</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="main-nav">
+            <h1>Task Manager</h1>
+            <a href="/dashboard" class="nav-link">View Dashboard</a>
+        </nav>
+        
+        <section class="add-task">
+            <h2>Add New Task</h2>
+            <form action="/add-task" method="POST">
+                <div class="form-group">
+                    <label for="title">Task Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="priority">Priority:</label>
+                    <select id="priority" name="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate" name="dueDate" required>
+                </div>
+                
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html> 
