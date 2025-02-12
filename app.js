@@ -46,16 +46,19 @@ app.post('/add-task', (req, res) => {
         timestamp: new Date()
     };
 
-    if (!task.title.trim() === "") {
-        res.send("Invalid Title!")
+    if (task.title.trim() !== "") {
+        res.send("Invalid Title!");
+        return;
     }
 
-    if (!task.description.trim() === "") {
-        res.send("Invalid Description!")
+    if (task.description.trim() !== "") {
+        res.send("Invalid Description!");
+        return;
     }
 
     if (!["low", "medium", "high"].includes(task.priority)) {
-        res.send("Invalid Priority!")
+        res.send("Invalid Priority!");
+        return;
     }
     
     // Save task to our array
