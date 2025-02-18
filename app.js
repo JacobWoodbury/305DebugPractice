@@ -41,7 +41,7 @@ app.post('/add-task', (req, res) => {
         title: req.body.title,
         description: req.body.description,
         priority: req.body.priority,
-        dueDate: req.body.due,
+        dueDate: req.body.dueDate,
         status: 'pending',
         timestamp: new Date()
     };
