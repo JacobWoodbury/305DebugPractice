@@ -46,12 +46,12 @@ app.post('/add-task', (req, res) => {
         timestamp: new Date()
     };
 
-    if (task.title.trim() !== "") {
+    if (task.title.trim() === "") {
         res.send("Invalid Title!");
         return;
     }
 
-    if (task.description.trim() !== "") {
+    if (task.description.trim() === "") {
         res.send("Invalid Description!");
         return;
     }
